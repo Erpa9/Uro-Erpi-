@@ -1,0 +1,235 @@
+/* Osnovni slog za stran */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Osnovni slog za zavihke na domači strani */
+#zavihki {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.zavihek {
+    width: 30%;
+    background-color: #fff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.zavihek h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.zavihek p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.zavihek .gumb {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.zavihek .gumb:hover {
+    background-color: #555;
+}
+
+/* Odgovorno oblikovanje za manjše zaslone */
+@media (max-width: 768px) {
+    #zavihki {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .zavihek {
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+}
+
+
+/* Slog za naslovno sekcijo na strani Blog */
+
+}
+
+/* Mreža za razporeditev blog objav */
+#blog-posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dva stolpca */
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Najnovejši članek - celotna širina zgoraj levo */
+.najnovejsi {
+    grid-column: 1 / -1; /* Razširi najnovejši članek čez oba stolpca */
+}
+
+/* Slog za posamezne blog objave */
+.blog-post {
+    background-color: #fff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+
+.blog-post h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.blog-post p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.blog-post .gumb {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.blog-post .gumb:hover {
+    background-color: #555;
+}
+
+/* Noga strani */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Odgovorno oblikovanje za manjše zaslone */
+@media (max-width: 768px) {
+    #blog-posts {
+        grid-template-columns: 1fr; /* En stolpec na manjših zaslonih */
+    }
+}
+/* Slog za članek s prekrivnim ozadjem */
+.clanek-s-ozadjem {
+    background-image: url('Theonering.jpg'); /* Pot do slike */
+    background-size: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 4rem 2rem;
+    color: #fff;
+}
+
+.clanek-s-ozadjem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Polprosojna prekrivna plast */
+    z-index: 1;
+}
+
+.clanek-s-ozadjem article {
+    position: relative;
+    z-index: 2; /* Da bo besedilo nad prekrivno plastjo */
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Svetlejše ozadje za lažje branje */
+    padding: 2rem;
+    border-radius: 8px;
+    color: #333;
+}
+
+.clanek-s-ozadjem h2 {
+    color: #333;
+    font-size: 4rem;
+}
+
+.clanek-s-ozadjem .datum {
+    color: #888
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.clanek-s-ozadjem p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.slikaclanek3 {
+    width: 10%;
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px; /* Dodatek za zaobljene robove */
+}
+.krog-slika {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Senčenje za globino */
+    border: 3px solid #333; /* Tanka obroba za poudarek */
+}
+
+
